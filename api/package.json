@@ -1,0 +1,45 @@
+{
+  "name": "authentication-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./server.ts",
+    "migrate-db": "npx prisma migrate dev --name init",
+    "migrate-test-db": "cross-env DATABASE_URL=mysql://username:password@localhost:3306/authdb_test npx prisma migrate dev --name test",
+    "test": "npm run migrate-test-db && cross-env DATABASE_URL=mysql://username:password@localhost:3306/authdb_test jest"
+  },
+  "author": "dehnavi@gmx.com",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.16.8",
+    "@types/config": "^0.0.41",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/jest": "^27.4.1",
+    "@types/jsonwebtoken": "^8.5.8",
+    "@types/lodash": "^4.14.178",
+    "@types/node": "^17.0.21",
+    "@types/supertest": "^2.0.11",
+    "cross-env": "^7.0.3",
+    "jest": "^27.5.1",
+    "jest-mock-extended": "^2.0.4",
+    "prisma": "^3.10.0",
+    "supertest": "^6.2.2",
+    "ts-jest": "^27.1.3",
+    "ts-node": "^10.5.0",
+    "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "@prisma/client": "^3.10.0",
+    "argon2": "^0.28.4",
+    "config": "^3.3.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "helmet": "^5.0.2",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "zod": "^3.12.0"
+  }
+}
