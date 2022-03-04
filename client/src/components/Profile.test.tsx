@@ -11,6 +11,6 @@ describe("Profile", () => {
   it("shows welcome message to the logged in test user", async () => {
     tokenService.setUser(testUser);
     const rc = render(Profile);
-    expect(rc.queryByText("Welcome Ali Doe!")).toBeTruthy();
+    expect(rc.queryByText("Welcome John Doe!")).toBeTruthy();
   });
 });
